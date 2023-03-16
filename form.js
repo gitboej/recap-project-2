@@ -83,16 +83,32 @@ submitButton.addEventListener("click", (event) => {
   questionInput.focus();
 });
 
+// Counter for characters 1
 const question = document.querySelector('[data-js="question"]');
-const amountLeft = document.querySelector('[data-js="amountLeft"]');
-const maxLength = question.getAttribute("maxlength");
+const amountLeft1 = document.querySelector('[data-js="amountLeft1"]');
+const maxLength1 = question.getAttribute("maxlength");
 
-const updateAmountLeft = (value) => {
-  amountLeft.innerText = value;
+const updateAmountLeft1 = (value) => {
+  amountLeft1.innerText = value;
 };
 
-updateAmountLeft(maxLength);
+updateAmountLeft1(maxLength1);
 
 question.addEventListener("input", () => {
-  updateAmountLeft(maxLength - question.value.length);
+  updateAmountLeft1(maxLength1 - question.value.length);
+});
+
+// Counter for characters 2
+const answer = document.querySelector('[data-js="answer"]');
+const amountLeft2 = document.querySelector('[data-js="amountLeft2"]');
+const maxLength2 = answer.getAttribute("maxlength");
+
+const updateAmountLeft2 = (value) => {
+  amountLeft2.innerText = value;
+};
+
+updateAmountLeft2(maxLength2);
+
+answer.addEventListener("input", () => {
+  updateAmountLeft2(maxLength2 - answer.value.length);
 });
